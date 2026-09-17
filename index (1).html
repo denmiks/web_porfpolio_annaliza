@@ -52,6 +52,12 @@
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 24%, black 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 24%, black 100%);
   }
+  .brand-link {
+    text-shadow: 0 2px 18px rgba(255,255,255,0.22);
+  }
+  .brand-logo {
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.14), 0 12px 28px rgba(0,0,0,0.18);
+  }
   .leadership-carousel { position: relative; }
   .carousel-viewport { overflow: hidden; }
   .carousel-track { display: flex; transition: transform 0.45s ease; }
@@ -64,9 +70,9 @@
   <!-- Glass floating nav -->
   <header class="fixed top-0 inset-x-0 z-50">
     <nav class="max-w-5xl mx-auto mt-3 px-4 py-2 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2.5 font-serif text-base font-semibold text-paper">
-        <img src="pictures/ANNALIZA DIET LOGOFINAL.png" alt="Annaliza Diet logo" class="h-12 w-12 object-contain bg-white/5 rounded-full border border-white/10 p-0.5">
-        <span>Annaliza Diet</span>
+      <a href="#top" class="brand-link flex items-center gap-3 font-serif text-xl md:text-2xl font-bold tracking-wide text-paper">
+        <img src="pictures/ANNALIZA DIET LOGOFINAL.png" alt="Annaliza Diet logo" class="brand-logo h-14 w-14 md:h-16 md:w-16 object-contain bg-white/10 rounded-full border border-white/15 p-1">
+        <span class="inline-block bg-gradient-to-r from-white via-pinksoft to-white bg-clip-text text-transparent">Annaliza Diet</span>
       </a>
       <ul class="hidden md:flex gap-5 text-sm text-paper/90 items-center">
         <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
