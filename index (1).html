@@ -55,6 +55,19 @@
   .brand-link {
     text-shadow: 0 2px 18px rgba(255,255,255,0.22);
   }
+  .brand-name {
+    color: #fff;
+    transition: color 0.25s ease, background-image 0.25s ease;
+  }
+  .brand-name-white {
+    color: #fff;
+  }
+  .brand-name-gradient {
+    background: linear-gradient(90deg, #e17fb0 0%, #8f5fc5 45%, #5a3480 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
   .brand-logo {
     background: #fff;
     box-shadow: 0 0 0 2px rgba(255,255,255,0.22), 0 12px 28px rgba(0,0,0,0.2);
@@ -73,7 +86,7 @@
     <nav class="max-w-5xl mx-auto mt-3 px-4 py-2 flex items-center justify-between">
       <a href="#top" class="brand-link flex items-center gap-3 font-serif text-xl md:text-2xl font-bold tracking-wide text-paper">
         <img src="pictures/ANNALIZA DIET LOGOFINAL.png" alt="Annaliza Diet logo" class="brand-logo h-14 w-14 md:h-16 md:w-16 object-contain bg-white/10 rounded-full border border-white/15 p-1">
-        <span class="inline-block bg-gradient-to-r from-white via-pinksoft to-white bg-clip-text text-transparent">Annaliza Diet</span>
+        <span class="brand-name brand-name-white inline-block">Annaliza Diet</span>
       </a>
       <ul class="hidden md:flex gap-5 text-sm text-paper/90 items-center">
         <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
@@ -88,7 +101,7 @@
   </header>
 
   <!-- Hero -->
-  <section id="top" class="hero-bg text-paper min-h-[92vh] flex items-end relative overflow-hidden">
+  <section id="top" class="hero-bg text-paper min-h-[92vh] flex items-end relative overflow-hidden" data-brand-surface="dark">
     <div class="absolute inset-y-0 right-0 w-full md:w-1/2 pointer-events-none">
       <img src="pictures/ANNALIZA.jpg" alt="Annaliza Diet" class="hero-portrait">
     </div>
@@ -421,7 +434,7 @@
   </section>
 
   <!-- Collaborate -->
-  <section class="hero-bg text-paper py-20 md:py-24">
+  <section class="hero-bg text-paper py-20 md:py-24" data-brand-surface="dark">
     <div class="max-w-3xl mx-auto px-7 text-center">
       <h2 class="font-serif text-3xl md:text-4xl mb-5">Let's build something meaningful.</h2>
       <p class="text-paper/80 max-w-xl mx-auto mb-8">Great partnerships begin with shared vision. Annaliza welcomes conversations with universities, educational institutions, government and community organizations, corporations, investors, international education providers, and leaders seeking meaningful collaboration.</p>
@@ -478,6 +491,18 @@
   </footer>
 
   <script>
+    const brandName = document.querySelector('.brand-name');
+    const refreshBrandTone = () => {
+      const hit = document.elementFromPoint(window.innerWidth * 0.18, 110);
+      const isDarkSurface = !!(hit && (hit.closest('[data-brand-surface="dark"]') || hit.closest('header')));
+      brandName.classList.toggle('brand-name-white', isDarkSurface);
+      brandName.classList.toggle('brand-name-gradient', !isDarkSurface);
+    };
+
+    window.addEventListener('scroll', refreshBrandTone, { passive: true });
+    window.addEventListener('resize', refreshBrandTone);
+    refreshBrandTone();
+
     document.querySelectorAll('[data-carousel]').forEach((carousel) => {
       const track = carousel.querySelector('.carousel-track');
       const dots = carousel.querySelectorAll('[data-carousel-dot]');
