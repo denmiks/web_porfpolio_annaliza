@@ -56,6 +56,7 @@
     text-shadow: 0 2px 18px rgba(255,255,255,0.18);
   }
   .brand-name {
+    align-self: center;
     color: #fff;
     transition: color 0.25s ease, background-image 0.25s ease;
   }
@@ -69,6 +70,7 @@
     color: transparent;
   }
   .brand-logo {
+    align-self: center;
     background: transparent;
     box-shadow: none;
     filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18));
@@ -99,7 +101,7 @@
     right: 0;
     bottom: 0;
     height: 2px;
-    background: linear-gradient(90deg, #e17fb0, #7c4dae);
+    background: linear-gradient(90deg, rgba(124,77,174,0.72), rgba(225,127,176,0.72), rgba(255,255,255,0.88));
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.2s ease;
@@ -107,7 +109,15 @@
   .nav-link:hover::after,
   .nav-link:focus-visible::after { transform: scaleX(1); }
   .header-surface {
-    background: linear-gradient(90deg, rgba(255,255,255,0.98), rgba(246,232,250,0.96), rgba(232,211,244,0.94));
+    background:
+      radial-gradient(circle at 16% 20%, rgba(225,127,176,0.35), transparent 55%),
+      radial-gradient(circle at 84% 80%, rgba(124,77,174,0.4), transparent 50%),
+      linear-gradient(180deg, #3a2350 0%, #52306f 55%, #6b3a7d 100%);
+  }
+  .header-nav {
+    font-family: Fraunces, serif;
+    font-weight: 500;
+    color: #fff;
   }
   .leadership-carousel { position: relative; }
   .carousel-viewport { overflow: hidden; }
@@ -121,11 +131,11 @@
   <!-- Glass floating nav -->
   <header class="header-surface fixed top-0 inset-x-0 z-50">
     <nav class="max-w-5xl mx-auto mt-0 px-4 py-1 flex items-center justify-between">
-      <a href="#top" class="brand-link flex items-center gap-4 font-serif text-xl md:text-2xl font-bold tracking-wide text-paper">
-        <img src="pictures/ANNALIZA DIET LOGOFINAL.png" alt="Annaliza Diet logo" class="brand-logo h-24 w-24 md:h-28 md:w-28 object-contain">
-        <span class="brand-name header-gradient-text inline-block">Annaliza Diet</span>
+      <a href="#top" class="brand-link flex items-center gap-2 leading-none font-serif text-xl md:text-2xl font-bold tracking-wide text-paper">
+        <img src="pictures/ad logo finalist.png" alt="Annaliza Diet logo" class="brand-logo self-center h-24 w-24 md:h-28 md:w-28 object-contain">
+        <span class="brand-name brand-name-white self-center inline-block">Annaliza Diet</span>
       </a>
-      <ul class="header-gradient-text hidden md:flex gap-5 text-base items-center">
+      <ul class="header-nav hidden md:flex gap-5 text-lg items-center">
         <li><a href="#about" class="nav-link hover:text-white transition-colors">About</a></li>
         <li><a href="#founder" class="nav-link hover:text-white transition-colors">Founder</a></li>
         <li><a href="#leadership" class="nav-link hover:text-white transition-colors">Leadership</a></li>
@@ -142,7 +152,7 @@
     <div class="absolute inset-y-0 right-0 w-full md:w-1/2 pointer-events-none">
       <img src="pictures/ANNALIZA.jpg" alt="Annaliza Diet" class="hero-portrait">
     </div>
-    <div class="max-w-5xl mx-auto px-7 pb-20 pt-4 w-full relative z-10">
+    <div class="max-w-5xl mx-auto px-7 pb-20 pt-4 w-full relative z-10 -translate-x-40">
       <div class="font-serif italic text-pinksoft text-xl font-bold mb-5">Visionary Educator · Entrepreneur · Global Connector</div>
       <h1 class="font-serif font-medium text-4xl md:text-6xl leading-[1.1] tracking-tight max-w-3xl">
         Transforming education. Empowering people. Building opportunities across borders.
